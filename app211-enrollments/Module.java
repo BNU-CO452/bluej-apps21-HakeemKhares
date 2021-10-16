@@ -1,6 +1,7 @@
 
 /**
- * The module class 
+ * This class odels a BNU module which forms part of a course, each module is
+ * worth 15 coure points, which a student needs to achive a grade. 
  *
  * @author Hakeem Khares
  * @version 16/10/2021
