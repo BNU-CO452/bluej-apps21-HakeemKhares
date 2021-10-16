@@ -1,0 +1,24 @@
+ Course cyberSecurity = new Course("MB1CYB1", "MSci Cyber Secuirty");
+Module proConcepts = new Module("CO452", "Programming Concepts");
+cyberSecurity.addModule(proConcepts);
+cyberSecurity.print();
+ --------------------------------
+   App211: Course Details
+ --------------------------------
+
+ Course Code: MB1CYB1: MSci Cyber Secuirty
+
+ --------------------------------
+   App211: Module Details
+ --------------------------------
+
+ Module Code: CO452: Programming Concepts Credit 15
+
+proConcepts.setCredit(30);
+proConcepts.print();
+ --------------------------------
+   App211: Module Details
+ --------------------------------
+
+ Module Code: CO452: Programming Concepts Credit 30
+
