@@ -1,0 +1,14 @@
+ Course cyberSecurity = new Course("Cyber Security", "MB1CYB1");
+Student hakeemKhares = new Student("Hakeem Khares", 22136574);
+hakeemKhares.print();
+ Student ID: 22136574 Name: Hakeem Khares
+hakeemKhares.enrol(cyberSecurity);
+hakeemKhares.print();
+ Student ID: 22136574 Name: Hakeem Khares
+hakeemKhares.printCourse();
+ --------------------------------
+   App211: Course Details
+ --------------------------------
+
+ Course Code: Cyber Security: MB1CYB1
+
