@@ -1,0 +1,194 @@
+
+[PAGE 1]
+
+
+/**
+ * The Student class contains essential information that identifies 
+ * a student at BNU.  The class also contains information 
+ * concerning the course the student is currently enrolled on
+ * 
+ * @author Hakeem Khares
+ * @version 
+ */
+public class Student
+{
+    // A unique 8 digit BNU identifier
+    private int id;
+    // the student's full name
+    private String name;
+    // The course the student is enrolled on
+    private Course course;
+    
+    /**
+     * Create a new student with a given name and ID number.
+     */
+    public Student(String name, int id)
+    {
+        this.name = name;
+        this.id = id;
+    }
+
+    /**
+     * Return the full name of this student.
+     */
+    public String getName()
+    {
+        return name;
+    }
+
+     /**
+     * Return the student ID of this student.
+     */
+    public int getID()
+    {
+        return id;
+    }
+
+    public void enrol(Course course)
+    {
+        this.course = course;
+    }
+    
+    /**
+     * Print the student's name and ID number to the output terminal.
+     */
+    public void print()
+    {
+        System.out.println(" Student ID: " + id + " Name: " + name);
+    }
+    
+    public void printCourse()
+    {
+        course.print();
+    }
+}
+
+
+[PAGE 2]
+
+import java.util.*;
+
+/**
+ * This class contains information about an undergraduate course
+ * at BNU together with a list of student who are enrolled
+ *
+ * @author Hakeem Khares
+ * @version 16/10/2021
+ */
+public class Course
+{
+    // A unique identifier e.g. BT1CTG1
+    private String code;
+    // The full title including qualification and subject
+    private String title;
+    //A full title including modules within course. 
+    private Module module;
+    /**
+     * Create a Course with a maximum number of enrolments. 
+     * All other details are set to unkown values.
+     */
+    public Course(String code, String title)
+    {
+        this.code = code;
+        this.title = title;
+    }
+
+    
+    /**
+     * Print the details of the course, the list
+     * of students enrolled and the module
+     */
+    public void print()
+    {
+        printHeading();
+        
+        System.out.println(" Course Code: " + code + ": " + title);
+        System.out.println();
+        
+        module.print();
+    }
+    
+    /**
+     * Print out the details of the course to the terminal.
+     */
+    private void printHeading()
+    {
+        System.out.println(" --------------------------------");
+        System.out.println("   App211: Course Details");
+        System.out.println(" --------------------------------");
+        System.out.println();
+    }
+    
+    public void addModule(Module module)
+    {
+        this.module = module;
+    }
+}
+
+
+[PAGE 3]
+
+/**
+ * This class models a BNU module which forms part of a course, each module is
+ * worth 15 coure points, which a student needs to achive a grade. 
+ *
+ * @author Hakeem Khares
+ * @version 16/10/2021
+ */
+public class Module
+{
+    //Variables
+    private String code;
+    private String title;
+    private int credit;
+    /**
+     * Constructor for objects of class Module
+     */
+    public Module(String code, String title)
+    {
+        //initilise instance variables
+        credit = 15;
+        this.code = code;
+        this.title = title;
+    }
+    
+    public String getCode()
+    {
+        return code;
+    }
+    
+        public String getTitle()
+    {
+        return title;
+    }
+    
+    public void setCredit(int credit)
+    {
+        this.credit = credit;
+    }
+    
+     /**
+      * This method will printout the Module code and title
+      */
+    public void print()
+    {
+        printHeading();
+        
+        System.out.println(" Module Code: " + code + ": " + title + " Credit "
+                                                        + credit);
+        System.out.println();
+    
+    }
+    
+    /**
+     * Print out the details of the module to the terminal.
+     */
+    private void printHeading()
+    {
+        System.out.println(" --------------------------------");
+        System.out.println("   App211: Module Details");
+        System.out.println(" --------------------------------");
+        System.out.println();
+    }
+}
+

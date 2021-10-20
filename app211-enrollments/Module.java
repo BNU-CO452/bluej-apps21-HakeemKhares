@@ -1,6 +1,6 @@
 
 /**
- * This class odels a BNU module which forms part of a course, each module is
+ * This class models a BNU module which forms part of a course, each module is
  * worth 15 coure points, which a student needs to achive a grade. 
  *
  * @author Hakeem Khares
