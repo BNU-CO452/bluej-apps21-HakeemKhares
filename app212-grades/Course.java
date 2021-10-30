@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 /**
- * This class stores information about a course
- * that enrolled students may want to complete
+ * This class stores information about a course which students may wish
+ * to take.
  *
- * @author Derek Peacock and Nicholas Day
- * @version 0.1 11/Sep/2020
+ * @author Hakeem Khares
+ * @version 1.0
  */
 public class Course
 {
@@ -19,7 +19,7 @@ public class Course
      
     public Course()
     {
-        this("G400", "BSc Computing");
+        this("MB1CYB1", "MSci");
     }
     
     /**
@@ -89,6 +89,10 @@ public class Course
      */
     public void printModules()
     {
-        System.out.println();
+        for (Module module : modules)
+        {
+            module.print();
+        }
+    
     }
 }

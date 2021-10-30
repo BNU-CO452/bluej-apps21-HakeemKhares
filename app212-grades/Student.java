@@ -3,9 +3,8 @@ import java.util.*;
  * The Student class represents a student in a student administration system.
  * It holds the student details relevant in our context.
  * 
- * @author Michael Kölling and David Barnes
- * Modified by Derek Peacock & Nicholas Day
- * @version 2021-08-18
+ * @author Hakeem Khares
+ * @version 1.0
  */
 public class Student
 {
@@ -19,12 +18,12 @@ public class Student
     private ArrayList<ModuleMark> marks;
     
     /**
-     * This constructor creates a new student with a
-     * fixed name and id. 
+     * This constructor creates a pre-defined value that can be used to save 
+     * time.
      */
     public Student()
     {
-        this("Derek", 12345678);
+        this("Hakeem", 22136574);
     }
     
     /**

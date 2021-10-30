@@ -1,0 +1,33 @@
+ Student hakeemKhares = new Student();
+Course cyberSecurity = new Course();
+Module proConcepts = new Module("CO452", "Programming Concepts");
+hakeemKhares.print();
+ Student ID: 22136574, Hakeem
+hakeemKhares.enrol(cyberSecurity);
+cyberSecurity.addModule(proConcepts);
+hakeemKhares.printCourse();
+ Student ID: 22136574, Hakeem
+
+ Course MB1CYB1: MSci
+
+ CO452: 	Programming ConceptsModuleMark hakeemProConMark = new ModuleMark(proConcepts);
+hakeemProConMark.getCredit()
+    returned int 0
+hakeemProConMark.setMark(92);
+hakeemKhares.printTranscript();
+ ------------------------------------
+ App21-02: Exam Board Transcript 2021
+        by student name
+ ------------------------------------
+ Student ID: 22136574, Hakeem
+
+ Course MB1CYB1: MSci
+
+ CO452: 	Programming Concepts
+
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+ Code 	 Module 		Credit	 Mark 	 Grade
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+
+
+ No Final Course Grade Yet!
