@@ -1,0 +1,12 @@
+ cyberSecuirty.addModule(proCon);
+cyberSecuirty.addModule(webDev);
+cyberSecuirty.addModule(digiTech);
+cyberSecuirty.addModule(compArch);
+cyberSecuirty.print();
+
+ Course MB1CYB1: MSci
+
+ co452: 	Programming Concepts	  15 credits
+ co450: 	Computer Architectures	  15 credits
+ co454: 	Digital Technologies	  15 credits
+ co456: 	Web Development	  15 creditshakeemKhares.awardTestMarks();

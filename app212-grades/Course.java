@@ -43,6 +43,14 @@ public class Course
      */
     public void createModules()
     {
+        Module co452 = new Module ("co452", "Programming Concepts");
+        Module co450 = new Module ("co450", "Computer Architectures");
+        Module co454 = new Module ("co454", "Digital Technologies");
+        Module co456 = new Module ("co456", "Web Development");
+        addModule(co452);
+        addModule(co450);
+        addModule(co454);
+        addModule(co456);
 
     }
     
@@ -55,11 +63,23 @@ public class Course
     }
     
     /**
-     * 
+     * Set the boundries required to diffrinciate the different grades
+     * awarded to the student. 
      */
     public Grades convertToGrade(int mark)
     {
-        return Grades.NS;
+        if(mark >= 0 && mark <= 39)
+            return Grades.F;
+        else if(mark > 39 && mark <= 49)
+             return Grades.D;
+        else if(mark > 49 && mark <= 59)
+             return Grades.C;
+        else if(mark > 59 && mark <= 69)
+             return Grades.B;
+        else if(mark > 69 && mark <= 100)
+             return Grades.A;
+        else 
+             return Grades.NS;
     }
     
     /**
@@ -68,7 +88,17 @@ public class Course
      */
     public Grades calculateGrade(ArrayList<ModuleMark> marks)
     {
-        return Grades.NS;
+        int total = 0;
+        int finalMark = 0;
+        for(ModuleMark mark : marks)
+        {
+            total = total + mark.getValue();
+        }
+        
+        finalMark = total / MAXN_MODULES;
+        finalGrade = convertToGrade(finalMark);
+        
+        return finalGrade;
     }
     
     /**
@@ -92,6 +122,7 @@ public class Course
         for (Module module : modules)
         {
             module.print();
+            module.printCredit();
         }
     
     }

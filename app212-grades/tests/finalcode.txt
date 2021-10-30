@@ -1,0 +1,437 @@
+import java.util.*;
+import java.util.Random;
+/**
+ * The Student class represents a student in a student administration system.
+ * It holds the student details relevant in our context.
+ * 
+ * @author Hakeem Khares
+ * @version 1.0
+ */
+public class Student
+{
+    // the student ID
+    private int id;
+    // the student's full name
+    private String name;
+    // The course the student is enrolled on
+    private Course course;
+    // The marks awarded for the modules on the course
+    private ArrayList<ModuleMark> marks;
+    //Random mark generator used for testing efficency
+    private Random randomMark;
+    /**
+     * This constructor creates a pre-defined value that can be used to save 
+     * time.
+     */
+    public Student()
+    {
+        this("Hakeem", 22136574);
+    }
+    
+    /**
+     * Create a new student with a given name and ID number.
+     */
+    public Student(String name, int id)
+    {
+        this.name = name;
+        this.id = id;
+        randomMark = new Random();
+        marks = new ArrayList<ModuleMark>();
+    }
+
+    public void addMark(ModuleMark mark)
+    {
+        marks.add(mark);
+    }
+    
+    /**
+     * Find the module by the moduleCode and
+     * set its mark to the value
+     */
+    public void awardMark(String moduleCode, int value)
+    {
+
+    }
+    
+    /**
+     * Set the student's course
+     */
+    public void enrol(Course course)
+    {
+        this.course = course;
+        awardTestMarks();
+    }
+    
+    /**
+     * Award a different pass mark for each of the
+     * modules on the enrolled course
+     */
+    public void awardTestMarks()
+    {
+        int value = 45;
+        for(Module module : course.modules)
+        {
+            ModuleMark mark = new ModuleMark(module);
+            mark.setMark(randomMark.nextInt(100)); 
+            addMark(mark);
+         
+        }
+    }
+    
+    /**
+     * Return the full name of this student.
+     */
+    public String getName()
+    {
+        return name;
+    }
+
+    /**
+     * Return the student ID of this student.
+     */
+    public int getID()
+    {
+        return id;
+    }
+
+        
+    /**
+     * Print the student's name and ID number to the 
+     * output terminal.
+     */
+    public void print()
+    {
+        System.out.println(" Student ID: " + id + ", " + name);
+    }
+    
+    public void printCourse()
+    {
+        this.print();
+        course.print();
+    }
+    
+    private void printModules()
+    {
+        for(ModuleMark mark: marks)
+        {
+            mark.print();
+            System.out.println("\t" + course.convertToGrade(mark.getValue()));
+        }
+    }
+    
+    public void printTranscript()
+    {
+        System.out.println(" ------------------------------------");
+        System.out.println(" App21-02: Exam Board Transcript 2021");
+        System.out.println("        by student name");
+        System.out.println(" ------------------------------------");
+        
+        printCourse();
+        
+        System.out.println();
+        System.out.println();
+        System.out.println(" ---- \t -------------------- \t ------\t ---- \t -----");
+        System.out.println(" Code \t Module \t\tCredit\t Mark \t Grade");
+        System.out.println(" ---- \t -------------------- \t ------\t ---- \t -----");
+        
+        printModules();
+       
+        Grades finalGrade = course.calculateGrade(marks);
+        
+        System.out.println();
+        System.out.println();
+        
+        if(finalGrade == Grades.NS)
+        {
+            System.out.println(" No Final Course Grade Yet!");
+        }
+        else
+        {
+            System.out.println(" Final Course Grade = " + finalGrade);
+        }
+    }
+}
+
+import java.util.ArrayList;
+/**
+ * This class stores information about a course which students may wish
+ * to take.
+ *
+ * @author Hakeem Khares
+ * @version 1.0
+ */
+public class Course
+{
+    public final static int MAXN_MODULES = 4;
+    
+    public ArrayList<Module> modules;
+    
+    private String code;
+    private String title;
+    
+    private Grades finalGrade;
+     
+    public Course()
+    {
+        this("MB1CYB1", "MSci");
+    }
+    
+    /**
+     * Constructor for objects of class Course
+     */
+    public Course(String code, String title)
+    {
+        // initialise instance variables
+        this.code = code;
+        this.title = title;
+        
+        modules  = new ArrayList<Module>();
+        
+        createModules();
+    }
+
+    /**
+     * Create four modules and add them to the
+     * modules list for testing purposes.  These
+     * must be your four modules.
+     */
+    public void createModules()
+    {
+        Module co452 = new Module ("co452", "Programming Concepts");
+        Module co450 = new Module ("co450", "Computer Architectures");
+        Module co454 = new Module ("co454", "Digital Technologies");
+        Module co456 = new Module ("co456", "Web Development");
+        addModule(co452);
+        addModule(co450);
+        addModule(co454);
+        addModule(co456);
+
+    }
+    
+    public void addModule(Module module)
+    {
+        if(modules.size() < MAXN_MODULES)
+        {
+            modules.add(module);
+        }
+    }
+    
+    /**
+     * Set the boundries required to diffrinciate the different grades
+     * awarded to the student. 
+     */
+    public Grades convertToGrade(int mark)
+    {
+        if(mark >= 0 && mark <= 39)
+            return Grades.F;
+        else if(mark > 39 && mark <= 49)
+             return Grades.D;
+        else if(mark > 49 && mark <= 59)
+             return Grades.C;
+        else if(mark > 59 && mark <= 69)
+             return Grades.B;
+        else if(mark > 69 && mark <= 100)
+             return Grades.A;
+        else 
+             return Grades.NS;
+    }
+    
+    /**
+     * Calculate the average mark from the four module marks
+     * and convert that into a final grade.
+     */
+    public Grades calculateGrade(ArrayList<ModuleMark> marks)
+    {
+        int total = 0;
+        int finalMark = 0;
+        for(ModuleMark mark : marks)
+        {
+            total = total + mark.getValue();
+        }
+        
+        finalMark = total / MAXN_MODULES;
+        finalGrade = convertToGrade(finalMark);
+        
+        return finalGrade;
+    }
+    
+    /**
+     * Prints out the details of a course and the
+     * four modules
+     */
+    public void print()
+    {
+        System.out.println();
+        System.out.println(" Course " + code + ": " + title);
+        //System.out.println();
+        
+        printModules();
+    }
+    
+    /**
+     * Print the course's four modules
+     */
+    public void printModules()
+    {
+        for (Module module : modules)
+        {
+            module.print();
+            module.printCredit();
+        }
+    
+    }
+}
+
+/**
+ * Modules form part of a course and contain
+ * credits that students achieve when they
+ * pass the module with a mark of 40+
+ *
+ * @author Hakeem Khares
+ * @version 1.0
+ */
+public class Module
+{
+    // Most modules are worth 15 credits
+    public static final int CREDIT = 15;
+    
+    private String code;
+    private String title;
+
+    /**
+     * Constructor for objects of class Module 
+     * which initialises the module code and title
+     */
+    public Module(String code, String title)
+    {
+        this.code = code;
+        this.title = title;
+    }
+
+   
+    public String getCode()
+    {
+        return code;
+    }
+    
+    
+    public String getTitle()
+    {
+        return title;
+    }
+    
+    /**
+     * Print out the code and title of this module
+     * but stay on the same line so that credits
+     * can be added if needed.
+     */
+    public void print()
+    {
+        System.out.println();
+        System.out.print(" " + code + ": " + "\t" + title);
+    }
+    
+    /**
+     * Print out the credit on the current line
+     * so that a mark and grade could be added
+     */
+    public void printCredit()
+    {
+        System.out.print("\t  " + CREDIT + " credits");
+    }
+}
+
+
+/**
+ * Write a description of class ModuleMark here.
+ *
+ * @author Hakeem Khares
+ * @version 1.0
+ */
+public class ModuleMark
+{
+    private int mark;
+    private Module module;
+    
+    /**
+     * Constructor for objects of class ModuleMark
+     */
+    public ModuleMark(Module module)
+    {
+        mark = 0;
+        this.module = module;
+    }
+    
+    public int getValue()
+    {
+        return mark;
+    }
+    
+    /**
+     * If the mark is 40% or more then the 
+     * student is awarded the module's credit.
+     */
+    public int getCredit()
+    {
+        if(mark <= Grades.F.getValue())
+        {
+            return 0;
+        }
+        else
+        {
+            return Module.CREDIT;
+        }
+    }
+    
+    public void setMark(int mark)
+    {
+        this.mark = mark;
+    }
+    
+    public Module getModule()
+    {
+        return module;
+    }
+    
+    /**
+     * Print the module details and any credit
+     * that has been awarded.
+     */
+    public void print()
+    {
+        module.print();
+        System.out.print("\t  " + getCredit() + "\t" + mark);
+    }
+}
+
+
+
+
+/**
+ * These are the grades used by BNU to classify 
+ * students at the completion of their course
+ * Each value is the top percentage mark for that grade
+ * @author Hakeem Khares
+ * @version 1.0
+ */
+public enum Grades
+{
+    NS (0), 
+    F  (39), 
+    D  (49), 
+    C  (59), 
+    B  (69), 
+    A  (100);
+    
+    private final int value;
+    
+    private Grades(int value)
+    {
+        this.value = value;
+    }
+    
+    public int getValue()
+    {
+        return value;
+    }
+}
