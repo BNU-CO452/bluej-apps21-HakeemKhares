@@ -47,9 +47,11 @@ public class Course
         Module co450 = new Module ("co450", "Computer Architectures");
         Module co454 = new Module ("co454", "Digital Technologies");
         Module co456 = new Module ("co456", "Web Development");
+        Module co400 = new Module ("co400", "Bunjee Jumping");
         addModule(co452);
         addModule(co450);
         addModule(co454);
+        addModule(co456);
         addModule(co456);
 
     }

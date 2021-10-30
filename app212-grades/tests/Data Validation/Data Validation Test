@@ -1,0 +1,33 @@
+ cyberSec.convertToGrade(110)
+    returned Object NS
+cyberSec.convertToGrade(-10)
+    returned Object NS
+hakeemKhares.enrol(cyberSec);
+hakeemKhares.printTranscript();
+ ------------------------------------
+ App21-02: Exam Board Transcript 2021
+        by student name
+ ------------------------------------
+ Student ID: 22136574, Hakeem
+
+ Course MB1CYB1: MSci
+
+ co452: 	Programming Concepts	  15 credits
+ co450: 	Computer Architectures	  15 credits
+ co454: 	Digital Technologies	  15 credits
+ co456: 	Web Development	  15 credits
+
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+ Code 	 Module 		Credit	 Mark 	 Grade
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+
+ co452: 	Programming Concepts	  15	80	A
+
+ co450: 	Computer Architectures	  15	58	C
+
+ co454: 	Digital Technologies	  15	83	A
+
+ co456: 	Web Development	  15	55	C
+
+
+ Final Course Grade = B
