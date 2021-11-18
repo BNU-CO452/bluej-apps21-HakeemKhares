@@ -1,0 +1,24 @@
+Product banjo = new Product(001, "Banjo");
+banjo.print();
+ ID 1: Banjo stock level: 0
+banjo.decreaseQuantity(100);
+banjo.print();
+ ID 1: Banjo stock level: 0
+banjo.increaseQuantity(120);
+banjo.print();
+ ID 1: Banjo stock level: 120
+banjo.decreaseQuantity(40);
+banjo.print();
+ ID 1: Banjo stock level: 80
+Product cheese = new Product(002, "Ches");
+StockList Essentials = new StockList();
+Essentials.add(cheese);
+Essentials.add(banjo);
+Essentials.print();
+
+ Hakeem's Stock List
+ ====================
+
+ ID 2: Ches stock level: 0
+ ID 1: Banjo stock level: 80
+

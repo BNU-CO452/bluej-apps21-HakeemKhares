@@ -1,0 +1,90 @@
+StockList stockLis2 = new StockList();
+StockDemo stockDem2 = new StockDemo();
+stockDem2.runDemo();
+
+ Hakeem's Stock List
+ ====================
+
+ ID 101: Samsung Galaxy S20 stock level: 0
+ ID 102: Apple iPhone 12 stock level: 0
+ ID 103: Google Pixel 4A stock level: 0
+ ID 104: Samsung Galaxy S10 stock level: 0
+ ID 105: Apple iPhone 13 stock level: 0
+ ID 106: Samsung Galaxy S21 stock level: 0
+ ID 107: Samsung Galaxy S21 Ultra stock level: 0
+ ID 108: Samsung Z Flip3 stock level: 0
+ ID 109: Samsung Galaxy Buds2 stock level: 0
+ ID 110: Apple AirProds Pro stock level: 0
+
+ Bought 500 of Samsung Galaxy S20
+ Bought 560 of Apple iPhone 12
+ Bought 530 of Google Pixel 4A
+ Bought 520 of Samsung Galaxy S10
+ Bought 580 of Apple iPhone 13
+ Bought 550 of Samsung Galaxy S21
+ Bought 550 of Samsung Galaxy S21 Ultra
+ Bought 530 of Samsung Z Flip3
+ Bought 510 of Samsung Galaxy Buds2
+ Bought 610 of Apple AirProds Pro
+
+ Hakeem's Stock List
+ ====================
+
+ ID 101: Samsung Galaxy S20 stock level: 500
+ ID 102: Apple iPhone 12 stock level: 560
+ ID 103: Google Pixel 4A stock level: 530
+ ID 104: Samsung Galaxy S10 stock level: 520
+ ID 105: Apple iPhone 13 stock level: 580
+ ID 106: Samsung Galaxy S21 stock level: 550
+ ID 107: Samsung Galaxy S21 Ultra stock level: 550
+ ID 108: Samsung Z Flip3 stock level: 530
+ ID 109: Samsung Galaxy Buds2 stock level: 510
+ ID 110: Apple AirProds Pro stock level: 610
+
+Sold 390 of Samsung Galaxy S20
+Sold 370 of Apple iPhone 12
+Sold 360 of Google Pixel 4A
+Sold 340 of Samsung Galaxy S10
+Sold 320 of Apple iPhone 13
+Sold 350 of Samsung Galaxy S21
+Sold 310 of Samsung Galaxy S21 Ultra
+Sold 310 of Samsung Z Flip3
+Sold 360 of Samsung Galaxy Buds2
+Sold 340 of Apple AirProds Pro
+
+ Hakeem's Stock List
+ ====================
+
+ ID 101: Samsung Galaxy S20 stock level: 110
+ ID 102: Apple iPhone 12 stock level: 190
+ ID 103: Google Pixel 4A stock level: 170
+ ID 104: Samsung Galaxy S10 stock level: 180
+ ID 105: Apple iPhone 13 stock level: 260
+ ID 106: Samsung Galaxy S21 stock level: 200
+ ID 107: Samsung Galaxy S21 Ultra stock level: 240
+ ID 108: Samsung Z Flip3 stock level: 220
+ ID 109: Samsung Galaxy Buds2 stock level: 150
+ ID 110: Apple AirProds Pro stock level: 270
+
+Product product1 = new Product(001, "cheese");
+Product product2 = new Product(002, "Banjo");
+product1.increaseQuantity(64);
+product2.increaseQuantity(74);
+stockLis2.add(product1);
+stockLis2.add(product2);
+stockLis2.print();
+
+ Hakeem's Stock List
+ ====================
+
+ ID 1: cheese stock level: 64
+ ID 2: Banjo stock level: 74
+
+stockLis2.remove(product2);
+stockLis2.print();
+
+ Hakeem's Stock List
+ ====================
+
+ ID 1: cheese stock level: 64
+
