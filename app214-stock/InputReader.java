@@ -4,10 +4,9 @@ import java.util.Scanner;
  * InputReader reads typed text input from the standard text terminal. 
  * The text typed by a user is returned.
  * 
- * @author     Michael Kölling and David J. Barnes
- * @version    0.1 (2016.02.29)
+ * @author Hakeem Khares
+ * @version 1.0
  * 
- * Modified by Derek Peacock 13/12/2020
  */
 public class InputReader
 {
@@ -34,13 +33,13 @@ public class InputReader
         
         while(!isValid)
         {
-            System.out.print(prompt);         // print prompt
+            System.out.print(prompt);        
             inputLine = reader.nextLine();
             
             if(!inputLine.isEmpty())
                 isValid = true;
             else 
-                System.out.println("\nYour input is blank!\n");
+                System.out.println(" Your input is blank! ");
         }
 
         return inputLine;
@@ -59,7 +58,7 @@ public class InputReader
         
         while(!isValid)
         {
-            System.out.println(prompt);         // print prompt
+            System.out.println(prompt);         
             number = reader.nextInt();
             
             if(number > 0)

@@ -1,0 +1,90 @@
+stockApp1.run();
+********************************
+  App214: Stock Application 
+      by Hakeem Khares
+********************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Buy:        Buy a product(s)
+    Sell:       Sell a product(s)
+    Search:     Searches for a product
+    StockBelow: Lists stock below set amount
+    Restockup:  Re-stock up a product
+    Print:      Print all products
+    Quit:       Quit the program
+
+ Select Option add
+enter ID number
+006
+ enter product name  Your input is blank! 
+ enter product name juice
+ product juice with ID 6 has been added successfully 
+********************************
+  App214: Stock Application 
+      by Hakeem Khares
+********************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Buy:        Buy a product(s)
+    Sell:       Sell a product(s)
+    Search:     Searches for a product
+    StockBelow: Lists stock below set amount
+    Restockup:  Re-stock up a product
+    Print:      Print all products
+    Quit:       Quit the program
+
+ Select Option remove
+ enter the ID of the item you wish to remove 
+006
+ ID 6: juice stock level: 0 was removed 
+ product with ID 6 has been removed 
+********************************
+  App214: Stock Application 
+      by Hakeem Khares
+********************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Buy:        Buy a product(s)
+    Sell:       Sell a product(s)
+    Search:     Searches for a product
+    StockBelow: Lists stock below set amount
+    Restockup:  Re-stock up a product
+    Print:      Print all products
+    Quit:       Quit the program
+
+ Select Option  Your input is blank! 
+ Select Option print
+
+ Convinence Store :) 
+ =+=+=+=+=+=+=+=+=+=+=
+
+ ID 1: Apple stock level: 0
+ ID 2: Banana stock level: 0
+ ID 3: Pear stock level: 0
+ ID 4: Orange stock level: 0
+ ID 5: Kiwi stock level: 0
+ ID 8: Nuclear Warhead stock level: 0
+ ID 16: Bread stock level: 0
+ ID 24: Milk stock level: 0
+ ID 32: Sugar stock level: 0
+ ID 40: Salt stock level: 0
+
+********************************
+  App214: Stock Application 
+      by Hakeem Khares
+********************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Buy:        Buy a product(s)
+    Sell:       Sell a product(s)
+    Search:     Searches for a product
+    StockBelow: Lists stock below set amount
+    Restockup:  Re-stock up a product
+    Print:      Print all products
+    Quit:       Quit the program
+
+ Select Option quit

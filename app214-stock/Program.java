@@ -1,9 +1,13 @@
-
 /**
  * Write a description of class Program here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Hakeem Khares
+ * @version 1.0
+ */
+
+/**
+ * the class blow contains main method and is activated first,
+ * it creates a new StockApp and makes the app run.
  */
 public class Program
 {
